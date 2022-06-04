@@ -11,27 +11,36 @@
 
     <body>
 
-        <header>
+        <header>            
             <div id="navbar">
                 <div id="logo">
                     <a href="index.html"><img src="img/logo.png"/></a>
                 </div>
+                <div id="pizzaTypeLinks">
+                    <a href="#meatballPrice"> Vegan </a>
+                    <a href="#pureVeganPrice"> Glutenless </a>
+                </div>
                 <div id="navTitle">
                     EvilPizza
                 </div>
-                <div id="basket">
-                    <img src="img/basket.jpg" onclick="showCart()">
+                <div id="extraLinks">
+                    <a href="#glutenFreeCheesePrice"> Sides </a>
+                    <a href="#chickenWingsPrice"> Drinks </a>
                 </div>
+                <div id="basket">
+                    <img src="img/basket.jpg" onclick="showCart(false)">
+                </div>
+                <!-- Cart -->
+                <div id="cartContainer">
+                        
+                </div>                
+            </div>
+            <div id="navbarSpace">
+
             </div>
         </header>
 
         <main>
-            <!-- Cart -->
-            <div id="cartContainer">
-                
-            </div>
-
-
             <!-- Shop -->
             <div id="shopContainer">
             <h1> Pizzas </h1>
@@ -91,6 +100,260 @@
                     <div class="spacer"></div>
                     <button class="inShopAddButton" onclick="addPizza('pepperoni')"> Add </button>
                 </div>
+                
+                <!-- Meat -->
+                <div class="pizza">
+                    <img src="img/Pizza_Meat.jpg"/>
+                    <p class="pizzaTitle" id="meatLoversTitle"> Meat Lovers </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="meatLoversSize" onclick="getOldSize('meatLovers')" onchange="changeSize('meatLovers')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="meatLoversBase" onclick="getOldBase('meatLovers')" onchange="changeBase('meatLovers')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="meatLoversPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('meatLovers')"> Add </button>
+                </div>
+                
+                <!-- Farmhouse -->
+                <div class="pizza">
+                    <img src="img/Pizza_Farmhouse.jpg"/>
+                    <p class="pizzaTitle" id="farmhouseTitle"> Farmhouse </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="farmhouseSize" onclick="getOldSize('farmhouse')" onchange="changeSize('farmhouse')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="farmhouseBase" onclick="getOldBase('farmhouse')" onchange="changeBase('farmhouse')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="farmhousePrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('farmhouse')"> Add </button>
+                </div>
+                
+                <!-- Hawaiian -->
+                <div class="pizza">
+                    <img src="img/Pizza_Hawaiian.jpg"/>
+                    <p class="pizzaTitle" id="hawaiianTitle"> Hawaiian </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="hawaiianSize" onclick="getOldSize('hawaiian')" onchange="changeSize('hawaiian')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="hawaiianBase" onclick="getOldBase('hawaiian')" onchange="changeBase('hawaiian')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="hawaiianPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('hawaiian')"> Add </button>
+                </div>
+
+                <!-- Mediterranean -->
+                <div class="pizza">
+                    <img src="img/Pizza_Mediterranean.jpg"/>
+                    <p class="pizzaTitle" id="mediterraneanTitle"> Mediterranean </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="mediterraneanSize" onclick="getOldSize('mediterranean')" onchange="changeSize('mediterranean')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="mediterraneanBase" onclick="getOldBase('mediterranean')" onchange="changeBase('mediterranean')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="mediterraneanPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('mediterranean')"> Add </button>
+                </div>
+
+                <!-- SpicyChicken -->
+                <div class="pizza">
+                    <img src="img/Pizza_SpicyChicken.jpg"/>
+                    <p class="pizzaTitle" id="spicyChickenTitle"> Spicy Chicken </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="spicyChickenSize" onclick="getOldSize('spicyChicken')" onchange="changeSize('spicyChicken')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="spicyChickenBase" onclick="getOldBase('spicyChicken')" onchange="changeBase('spicyChicken')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="spicyChickenPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('spicyChicken')"> Add </button>
+                </div>
+
+                <!-- PopcornChicken -->
+                <div class="pizza">
+                    <img src="img/Pizza_PopcornChicken.jpg"/>
+                    <p class="pizzaTitle" id="popcornChickenTitle"> Popcorn Chicken </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="popcornChickenSize" onclick="getOldSize('popcornChicken')" onchange="changeSize('popcornChicken')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="popcornChickenBase" onclick="getOldBase('popcornChicken')" onchange="changeBase('popcornChicken')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="popcornChickenPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('popcornChicken')"> Add </button>
+                </div>
+
+                <!-- BBQ -->
+                <div class="pizza">
+                    <img src="img/Pizza_BBQ.jpg"/>
+                    <p class="pizzaTitle" id="BBQTitle"> BBQ Chicken </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="BBQSize" onclick="getOldSize('BBQ')" onchange="changeSize('BBQ')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="BBQBase" onclick="getOldBase('BBQ')" onchange="changeBase('BBQ')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="BBQPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('BBQ')"> Add </button>
+                </div>
+
+                <!-- SpicyBeef -->
+                <div class="pizza">
+                    <img src="img/Pizza_SpicyBeef.jpg"/>
+                    <p class="pizzaTitle" id="spicyBeefTitle"> Spicy Beef </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="spicyBeefSize" onclick="getOldSize('spicyBeef')" onchange="changeSize('spicyBeef')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="spicyBeefBase" onclick="getOldBase('spicyBeef')" onchange="changeBase('spicyBeef')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="spicyBeefPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('spicyBeef')"> Add </button>
+                </div>
+
+                <!-- Meatball -->
+                <div class="pizza">
+                    <img src="img/Pizza_Meatball.jpg"/>
+                    <p class="pizzaTitle" id="meatballTitle"> Meatball </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="meatballSize" onclick="getOldSize('meatball')" onchange="changeSize('meatball')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="meatballBase" onclick="getOldBase('meatball')" onchange="changeBase('meatball')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="meatballPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('meatball')"> Add </button>
+                </div>
+
+                <h1> Vegan Pizzas </h1>
 
                 <!-- Vegan Meat -->
                 <div class="pizza">
@@ -119,14 +382,14 @@
                     <div class="spacer"></div>
                     <button class="inShopAddButton" onclick="addPizza('veganMeatLovers')"> Add </button>
                 </div>
-                
-                <!-- Meat -->
+
+                <!-- PureVegan -->
                 <div class="pizza">
-                    <img src="img/Pizza_Meat.jpg"/>
-                    <p class="pizzaTitle" id="meatLoversTitle"> Meat Lovers </p>
+                    <img src="img/Pizza_PureVegan.jpg"/>
+                    <p class="pizzaTitle" id="pureVeganTitle"> Pure Vegan </p>
                     <div class="selectorContainer"> 
                         <label> Size: </label> 
-                        <select class="inShopSizeSelector" id="meatLoversSize" onclick="getOldSize('meatLovers')" onchange="changeSize('meatLovers')">
+                        <select class="inShopSizeSelector" id="pureVeganSize" onclick="getOldSize('pureVegan')" onchange="changeSize('pureVegan')">
                             <option> Hero 8"</option>
                             <option> Crook 12"</option>
                             <option> Villain 16"</option>
@@ -135,7 +398,7 @@
                     </div>
                     <div class="selectorContainer"> 
                         <label> Base: </label> 
-                        <select class="inShopBaseSelector" id="meatLoversBase" onclick="getOldBase('meatLovers')" onchange="changeBase('meatLovers')">
+                        <select class="inShopBaseSelector" id="pureVeganBase" onclick="getOldBase('pureVegan')" onchange="changeBase('pureVegan')">
                             <option> Thin Italian </option>
                             <option> Stone Crust </option>
                             <option> Cheese Stuffed Crust </option>
@@ -143,11 +406,162 @@
                             <option> Gluten Free </option>
                         </select>
                     </div>
-                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="meatLoversPrice"> 8.99 </p>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="pureVeganPrice"> 8.99 </p>
                     <div class="spacer"></div>
-                    <button class="inShopAddButton" onclick="addPizza('meatLovers')"> Add </button>
-                </div>                
+                    <button class="inShopAddButton" onclick="addPizza('pureVegan')"> Add </button>
+                </div>
 
+                <h1> Gluten Free Pizzas </h1>
+
+                <!-- GlutenFreePepperoni -->
+                <div class="pizza">
+                    <img src="img/Pizza_GlutenFreePepperoni.jpg"/>
+                    <p class="pizzaTitle" id="glutenFreePepperoniTitle"> Gluten Free Pepperoni </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="glutenFreePepperoniSize" onclick="getOldSize('glutenFreePepperoni')" onchange="changeSize('glutenFreePepperoni')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="glutenFreePepperoniBase" onclick="getOldBase('glutenFreePepperoni')" onchange="changeBase('glutenFreePepperoni')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="glutenFreePepperoniPrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('glutenFreePepperoni')"> Add </button>
+                </div>
+
+                <!-- GlutenFreeCheese -->
+                <div class="pizza">
+                    <img src="img/Pizza_GlutenFreeCheese.jpg"/>
+                    <p class="pizzaTitle" id="glutenFreeCheeseTitle"> Gluten Free Cheese </p>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="glutenFreeCheeseSize" onclick="getOldSize('glutenFreeCheese')" onchange="changeSize('glutenFreeCheese')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="glutenFreeCheeseBase" onclick="getOldBase('glutenFreeCheese')" onchange="changeBase('glutenFreeCheese')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="glutenFreeCheesePrice"> 8.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addPizza('glutenFreeCheese')"> Add </button>
+                </div>
+
+                <h1> Sides </h1>
+
+                <!-- Salad -->
+                <div class="side">
+                    <img src="img/Side_Salad.jpg"/>
+                    <p class="sideTitle" id="saladTitle"> Salad </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="saladPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('salad')"> Add </button>
+                </div> 
+
+                <!-- Garlic Bread -->
+                <div class="side">
+                    <img src="img/Side_GarlicBread.jpg"/>
+                    <p class="sideTitle" id="garlicBreadTitle"> Garlic Bread </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="garlicBreadPrice"> 3.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('garlicBread')"> Add </button>
+                </div>
+
+                <!-- Cheesy Garlic Bread -->
+                <div class="side">
+                    <img src="img/Side_CheesyGarlicBread.jpg"/>
+                    <p class="sideTitle" id="cheesyGarlicBreadTitle"> Cheesy Garlic Bread </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="cheesyGarlicBreadPrice"> 4.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('cheesyGarlicBread')"> Add </button>
+                </div>
+
+                <!-- Coleslaw -->
+                <div class="side">
+                    <img src="img/Side_Coleslaw.jpg"/>
+                    <p class="sideTitle" id="coleslawTitle"> Coleslaw </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="coleslawPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('coleslaw')"> Add </button>
+                </div>
+
+                <!-- Chicken Wings -->
+                <div class="side">
+                    <img src="img/Side_ChickenWings.jpg"/>
+                    <p class="sideTitle" id="chickenWingsTitle"> Chicken Wings </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="chickenWingsPrice"> 4.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('chickenWings')"> Add </button>
+                </div>
+
+                <h1> Drinks </h1>
+
+                <!-- Pepsi -->
+                <div class="side">
+                    <img src="img/Side_Pepsi.jpg"/>
+                    <p class="sideTitle" id="pepsiTitle"> Pepsi </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="pepsiPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('pepsi')"> Add </button>
+                </div> 
+
+                <!-- Pepsi Max -->
+                <div class="side">
+                    <img src="img/Side_PepsiMax.jpg"/>
+                    <p class="sideTitle" id="pepsiMaxTitle"> Pepsi Max </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="pepsiMaxPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('pepsiMax')"> Add </button>
+                </div>
+
+                <!-- Dr Pepper -->
+                <div class="side">
+                    <img src="img/Side_DrPepper.jpg"/>
+                    <p class="sideTitle" id="DrPepperTitle"> Dr Pepper </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="DrPepperPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('DrPepper')"> Add </button>
+                </div>
+
+                <!-- 7-up -->
+                <div class="side">
+                    <img src="img/Side_7up.jpg"/>
+                    <p class="sideTitle" id="7upTitle"> 7up </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="7upPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('7up')"> Add </button>
+                </div>
+
+                <!-- Tango -->
+                <div class="side">
+                    <img src="img/Side_ChickenWings.jpg"/>
+                    <p class="sideTitle" id="tangoTitle"> Tango </p>
+                    <p class="sidePrice">£</p> <p class="sidePrice" id="tangoPrice"> 1.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="addSide('tango')"> Add </button>
+                </div>
             </div>
         </main>
 

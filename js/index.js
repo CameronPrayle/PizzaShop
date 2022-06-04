@@ -83,8 +83,8 @@ function changeBase(pizza){
 
 
 // Cart Functionality
-function showCart(){
-    if(document.getElementById("cartContainer").style.display=="block"){
+function showCart(fromAddToUI){
+    if(document.getElementById("cartContainer").style.display=="block" && fromAddToUI==false){
         document.getElementById("cartContainer").style="display: none;";
     }else{
         document.getElementById("cartContainer").style="display: block;";
@@ -95,16 +95,13 @@ class cart{
     constructor(){
         this.pizzaList=[];
         this.sideList=[];
-        this.drinkList=[];
     }
 
     addToCart(itemType, object){
         if(itemType=="pizza"){
             this.pizzaList.push(object);
-        }else if(itemType=="side"){
-            this.sideList.push(object);
         }else{
-            this.drinkList.push(object); 
+            this.sideList.push(object); 
         }
 
         this.addToUI();
@@ -122,8 +119,15 @@ class cart{
             ;
             total = total + parseFloat(this.pizzaList[i].price);
         }
+        for(let i=0; i<this.sideList.length; i++){
+            content = content + 
+            "Extra: "+this.sideList[i].type+"<br>"+
+            "Price: £"+this.sideList[i].price+"<br><br>"
+            ;
+            total = total + parseFloat(this.sideList[i].price);
+        }
 
-        content=content+"Total: " + total;
+        content=content+"Total: " + total.toFixed(2);
         document.getElementById("cartContainer").innerHTML=content;
     }
 }
@@ -137,6 +141,7 @@ function addPizza(id){
     var price = document.getElementById(id+"Price").textContent;
     const p = new pizza(id, type, size, base, price);
     c.addToCart("pizza", p);
+    showCart(true);
 }
 
 class pizza{
@@ -149,4 +154,19 @@ class pizza{
     }
 }
 
+function addSide(id){
+    var type = document.getElementById(id+"Title").textContent;
+    var price = document.getElementById(id+"Price").textContent;
+    const s = new side(id, type, price);
+    c.addToCart("side", s);
+    showCart(true);
+}
+
+class side{
+    constructor(id, type, price){
+        this.id = id;
+        this.type = type;
+        this.price = price;
+    }
+}
 
