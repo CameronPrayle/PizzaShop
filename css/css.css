@@ -11,15 +11,15 @@ body{
     width: 100%;
     height: 80px;
     background-color: rgb(230, 45, 45);
-    align-items: center;
-    justify-items: center;
-
-    display: grid;
-    grid-template-areas: 
-    "Logo Type Title Extra basket"
-    ". . . . cart";
-    grid-template-columns: 15% 25% 20% 25% 15%;
     position: fixed;
+}
+
+#subnavbar{
+    width: 100%;
+    height: 25px;
+    background-color: rgb(241, 55, 55);
+    position: fixed;
+    top: 80px;
 }
 
 #navbarSpace{
@@ -28,65 +28,40 @@ body{
 }
 
 #logo{
-    grid-area: Logo;
     width: 75px;
     height: 75px;
+    display: inline;
+    float: left;
+    margin-left: 10px;
 }
 
 #logo img{
     width: 75px;
     height: 75px;
+    display: inline;
 }
 
 #logo a:hover{
     opacity: 90%;
 }
 
-#pizzaTypeLinks{
-    grid-area: Type;
-}
-
-#pizzaTypeLinks a{
-    text-decoration: none;
-    color: rgb(230, 230, 230);
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-family: 'Creepster', cursive;
-}
-
-#pizzaTypeLinks a:hover{
-    opacity: 90%;
-}
-
-#extraLinks{
-    grid-area: Extra;
-}
-
-#extraLinks a{
-    text-decoration: none;
-    color: rgb(230, 230, 230);
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-family: 'Creepster', cursive;
-}
-
-#extraLinks a:hover{
-    opacity: 90%;
-}
-
 #navTitle{
-    grid-area: Title;
-    font-size: 65px;
+    font-size: 45px;
     font-family: 'Creepster', cursive;
     color: rgb(230, 230, 230);
+    display: inline;
+    float: left;
+    margin-top: 10px;
 }
 
 #basket{
     grid-area: basket;
     width: 65px;
     height: 65px;
+    display: inline;
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px;
 }
 
 #basket p{
@@ -110,12 +85,31 @@ body{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     display: none;
+    position: fixed;
+    right: 0;
 
     text-align: center;
     color: rgb(240, 239, 239);
     font-family: 'Comic Neue', cursive;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+#shopLinks{
+
+}
+
+#shopLinks a{
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-family: 'Creepster', cursive;
+}
+
+#shopLinks a:hover{
+    opacity: 90%;
 }
 
 /* Main */
@@ -231,119 +225,4 @@ h1{
 .sidePrice{
     font-size: 15px; 
     display: inline;
-}
-
-
-/* Responsiveness */
-
-@media only screen and (max-width: 900px){
-/* Header */
-#navbar{
-    width: 100%;
-    height: 80px;
-    background-color: rgb(230, 45, 45);
-    align-items: center;
-    justify-items: center;
-
-    display: grid;
-    grid-template-areas: 
-    "Type Extra Logo basket"
-    ". . . cart";
-    grid-template-columns: 25% 25% 25% 25%;
-    position: fixed;
-}
-
-#navbarSpace{
-    width: 100px;
-    height: 80px;
-}
-
-#logo{
-    grid-area: Logo;
-    width: 75px;
-    height: 75px;
-}
-
-#logo img{
-    width: 75px;
-    height: 75px;
-}
-
-#logo a:hover{
-    opacity: 90%;
-}
-
-#pizzaTypeLinks{
-    grid-area: Type;
-}
-
-#pizzaTypeLinks a{
-    text-decoration: none;
-    color: rgb(230, 230, 230);
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-family: 'Creepster', cursive;
-}
-
-#pizzaTypeLinks a:hover{
-    opacity: 90%;
-}
-
-#extraLinks{
-    grid-area: Extra;
-}
-
-#extraLinks a{
-    text-decoration: none;
-    color: rgb(230, 230, 230);
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-family: 'Creepster', cursive;
-}
-
-#extraLinks a:hover{
-    opacity: 90%;
-}
-
-#navTitle{
-    display: none;
-}
-
-#basket{
-    grid-area: basket;
-    width: 65px;
-    height: 65px;
-}
-
-#basket p{
-    color: rgb(230, 230, 230);
-}
-
-#basket img{
-    width: 65px;
-    height: 65px;
-}
-
-#basket img:hover{
-    opacity: 90%;
-}
-
-/* Cart */
-#cartContainer{
-    grid-area: cart;
-    width: 250px;
-    background-color: rgb(230, 45, 45);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    display: none;
-
-    text-align: center;
-    color: rgb(240, 239, 239);
-    font-family: 'Comic Neue', cursive;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 }
