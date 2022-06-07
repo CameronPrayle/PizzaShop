@@ -26,7 +26,8 @@
                 <div id="shopLinks">
                     <a href="#meatballPrice"> Vegan </a>
                     <a href="#pureVeganPrice"> Glutenless </a>
-                    <a href="#glutenFreeCheesePrice"> Sides </a>
+                    <a href="#glutenFreeCheesePrice"> 50/50 </a>
+                    <a href="#5050Price"> Sides </a>
                     <a href="#chickenWingsPrice"> Drinks </a>
                 </div>           
             </div>
@@ -102,7 +103,7 @@
                 
                 <!-- Meat -->
                 <div class="pizza">
-                    <img src="img/Pizza_Meat.jpg"/>
+                    <img src="img/Pizza_MeatLovers.jpg"/>
                     <p class="pizzaTitle" id="meatLoversTitle"> Meat Lovers </p>
                     <div class="selectorContainer"> 
                         <label> Size: </label> 
@@ -270,7 +271,7 @@
 
                 <!-- BBQ -->
                 <div class="pizza">
-                    <img src="img/Pizza_BBQ.jpg"/>
+                    <img src="img/Pizza_BBQChicken.jpg"/>
                     <p class="pizzaTitle" id="BBQTitle"> BBQ Chicken </p>
                     <div class="selectorContainer"> 
                         <label> Size: </label> 
@@ -356,7 +357,7 @@
 
                 <!-- Vegan Meat -->
                 <div class="pizza">
-                    <img src="img/Pizza_VeganMeat.jpg"/>
+                    <img src="img/Pizza_VeganMeatLovers.jpg"/>
                     <p class="pizzaTitle" id="veganMeatLoversTitle"> Vegan Meat Lovers </p>
                     <div class="selectorContainer"> 
                         <label> Size: </label> 
@@ -466,6 +467,82 @@
                     <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="glutenFreeCheesePrice"> 8.99 </p>
                     <div class="spacer"></div>
                     <button class="inShopAddButton" onclick="addPizza('glutenFreeCheese')"> Add </button>
+                </div>
+
+                <h1> 50/50 Pizza </h1>
+
+                <div class="pizza" id="pizza5050">
+                    <img id="pizza5050img1" src="img/Pizza_Margherita.jpg"/>
+                    <img id="pizza5050img2" src="img/Pizza_Margherita.jpg"/>
+
+                    <div class="half1">
+                        <div class="selectorContainer"> 
+                            <div> 1st Half: </div> 
+                            <select class="inShopBaseSelector" id="5050half1" onchange="changeHalf(1)">
+                                <option> Margherita </option>
+                                <option> Pepperoni </option>
+                                <option> Meat Lovers </option>
+                                <option> Farmhouse </option>
+                                <option> Hawaiian </option>
+                                <option> Mediterranean </option>
+                                <option> Spicy Chicken </option>
+                                <option> Popcorn Chicken </option>
+                                <option> BBQ Chicken </option>
+                                <option> Spicy Beef </option>
+                                <option> Meatball </option>
+                                <option> Vegan Meat Lovers </option>
+                                <option> Pure Vegan </option>
+                                <option> Gluten Free Pepperoni </option>
+                                <option> Gluten Free Cheese </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="half2">
+                        <div class="selectorContainer"> 
+                            <div> 2nd Half: </div> 
+                            <select class="inShopBaseSelector" id="5050half2" onchange="changeHalf(2)">
+                                <option> Margherita </option>
+                                <option> Pepperoni </option>
+                                <option> Meat Lovers </option>
+                                <option> Farmhouse </option>
+                                <option> Hawaiian </option>
+                                <option> Mediterranean </option>
+                                <option> Spicy Chicken </option>
+                                <option> Popcorn Chicken </option>
+                                <option> BBQ Chicken </option>
+                                <option> Spicy Beef </option>
+                                <option> Meatball </option>
+                                <option> Vegan Meat Lovers </option>
+                                <option> Pure Vegan </option>
+                                <option> Gluten Free Pepperoni </option>
+                                <option> Gluten Free Cheese </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Size: </label> 
+                        <select class="inShopSizeSelector" id="5050Size" onclick="getOldSize('5050')" onchange="changeSize('5050')">
+                            <option> Hero 8"</option>
+                            <option> Crook 12"</option>
+                            <option> Villain 16"</option>
+                            <option> Evil 20"</option>
+                        </select>
+                    </div>
+                    <div class="selectorContainer"> 
+                        <label> Base: </label> 
+                        <select class="inShopBaseSelector" id="5050Base" onclick="getOldBase('5050')" onchange="changeBase('5050')">
+                            <option> Thin Italian </option>
+                            <option> Stone Crust </option>
+                            <option> Cheese Stuffed Crust </option>
+                            <option> Vegan </option>
+                            <option> Gluten Free </option>
+                        </select>
+                    </div>
+                    
+                    <p class="pizzaPrice">£</p> <p class="pizzaPrice" id="5050Price"> 10.99 </p>
+                    <div class="spacer"></div>
+                    <button class="inShopAddButton" onclick="add5050Pizza('5050')"> Add </button>
                 </div>
 
                 <h1> Sides </h1>

@@ -95,13 +95,16 @@ class cart{
     constructor(){
         this.pizzaList=[];
         this.sideList=[];
+        this.pizza5050List=[];
     }
 
     addToCart(itemType, object){
         if(itemType=="pizza"){
             this.pizzaList.push(object);
-        }else{
+        }else if(itemType=="side"){
             this.sideList.push(object); 
+        }else{
+            this.pizza5050List.push(object); 
         }
 
         this.addToUI();
@@ -126,6 +129,17 @@ class cart{
             ;
             total = total + parseFloat(this.sideList[i].price);
         }
+        for(let i=0; i<this.pizza5050List.length; i++){
+            content = content + 
+            "Pizza: "+this.pizza5050List[i].type+"<br>"+
+            "1st Half: "+this.pizza5050List[i].half1+"<br>"+
+            "2nd Half: "+this.pizza5050List[i].half2+"<br>"+
+            "Size: "+this.pizza5050List[i].size+"<br>"+
+            "Base: "+this.pizza5050List[i].base+"<br>"+
+            "Price: £"+this.pizza5050List[i].price+"<br><br>"
+            ;
+            total = total + parseFloat(this.pizza5050List[i].price);
+        }
 
         content=content+"Total: " + total.toFixed(2);
         document.getElementById("cartContainer").innerHTML=content;
@@ -133,6 +147,8 @@ class cart{
 }
 
 const c = new cart();
+
+// Add Pizza
 
 function addPizza(id){
     var type = document.getElementById(id+"Title").textContent;
@@ -154,6 +170,8 @@ class pizza{
     }
 }
 
+// Add Side and Drink 
+
 function addSide(id){
     var type = document.getElementById(id+"Title").textContent;
     var price = document.getElementById(id+"Price").textContent;
@@ -170,3 +188,34 @@ class side{
     }
 }
 
+// Add 50/50 Pizza
+
+function changeHalf(halfNumber){
+    var oldImgId = "pizza5050img"+halfNumber;
+    var pizzaSelected = document.getElementById("5050half"+halfNumber).value;
+    pizzaSelected = pizzaSelected.replace(/\s+/g, '');
+    document.getElementById(oldImgId).src="img/Pizza_"+pizzaSelected+".jpg";
+}
+
+function add5050Pizza(id){
+    var half1 = document.getElementById(id+"half1").value;
+    var half2 = document.getElementById(id+"half2").value;
+    var size = document.getElementById(id+"Size").value;
+    var base = document.getElementById(id+"Base").value;
+    var price = document.getElementById(id+"Price").textContent;
+    const p5050 = new pizza5050(id, half1, half2, size, base, price);
+    c.addToCart("5050", p5050);
+    showCart(true);
+}
+
+class pizza5050{
+    constructor(id, half1, half2, size, base, price){
+        this.id = id;
+        this.type = "50/50 Pizza"
+        this.half1 = half1;
+        this.half2 = half2;
+        this.size = size;
+        this.base = base;
+        this.price = price;
+    }
+}
