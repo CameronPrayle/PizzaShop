@@ -1,6 +1,7 @@
 // Size Selector Functionality
 var oldSize="";
 
+// Gets old pizza size to compare to new size for the price change
 function getOldSize(pizza){
     oldSize = document.getElementById(pizza+"Size").value
 }
@@ -53,6 +54,7 @@ function changeSize(pizza){
 // Base Selector Functionality
 var oldBase="";
 
+// Gets old pizza base to compare to new base for the price change
 function getOldBase(pizza){
     oldBase = document.getElementById(pizza+"Base").value
 }
@@ -84,6 +86,7 @@ function changeBase(pizza){
 
 // Cart Functionality
 function showCart(fromAddToUI){
+    // Doesnt hide cart if its being called from addToUI as some users may want the keep cart displayed when adding new items
     if(document.getElementById("cartContainer").style.display=="block" && fromAddToUI==false){
         document.getElementById("cartContainer").style="display: none;";
     }else{
@@ -98,6 +101,7 @@ class cart{
         this.pizza5050List=[];
     }
 
+    // Adds items to list attributes
     addToCart(itemType, object){
         if(itemType=="pizza"){
             this.pizzaList.push(object);
@@ -110,6 +114,7 @@ class cart{
         this.addToUI();
     }
 
+    // Displays items in list attributes to cart 
     addToUI(){
         var content = "";
         var total = 0;
@@ -141,9 +146,28 @@ class cart{
             total = total + parseFloat(this.pizza5050List[i].price);
         }
 
-        content=content+"Total: " + total.toFixed(2);
+        content=content+"Total: " + total.toFixed(2) + '<br> <button class="inShopAddButton" onclick="c.itemsPurchased()"> Order </button>' ;
         document.getElementById("cartContainer").innerHTML=content;
     }
+
+    // Reset the attributes and cart display
+    itemsPurchased(){
+        document.getElementById("cartContainer").innerHTML="";
+        this.pizzaList=[];
+        this.sideList=[];
+        this.pizza5050List=[];
+
+        // Plays purchase animation
+        document.getElementById("purchased").style="display: block;";
+
+        // Reset after 5 seconds
+        setTimeout(() => {  
+            document.getElementById("purchased").style="display: none;";
+        }, 5000);
+
+        showCart(false);
+    }
+
 }
 
 const c = new cart();
@@ -191,10 +215,10 @@ class side{
 // Add 50/50 Pizza
 
 function changeHalf(halfNumber){
-    var oldImgId = "pizza5050img"+halfNumber;
-    var pizzaSelected = document.getElementById("5050half"+halfNumber).value;
-    pizzaSelected = pizzaSelected.replace(/\s+/g, '');
-    document.getElementById(oldImgId).src="img/Pizza_"+pizzaSelected+".jpg";
+    var oldImgId = "pizza5050img"+halfNumber; //Get old img id to select HTML element
+    var pizzaSelected = document.getElementById("5050half"+halfNumber).value; //Gets pizza title from selector
+    pizzaSelected = pizzaSelected.replace(/\s+/g, ''); //Remove the space in the string
+    document.getElementById(oldImgId).src="img/Pizza_"+pizzaSelected+".jpg"; //Replace img with correct img
 }
 
 function add5050Pizza(id){

@@ -267,3 +267,25 @@ h1{
     font-size: 15px; 
     display: inline;
 }
+
+/* Order placed */
+
+#purchased{
+    position: fixed;
+    font-size: 100px;
+    font-family: 'Creepster', cursive;
+    top: 325px;
+    left: 50%;
+    margin-left: -250px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(240, 177, 60);
+    display: none;
+
+    animation-name: move;
+    animation-duration: 1s;
+}
+
+@keyframes move {
+    0%   {top: -100px;}
+    100% {top: 325px;}
+  }
